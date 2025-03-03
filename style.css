@@ -1,5 +1,5 @@
 body {
-    background-image: url('love-background.jpg');
+    background-image: url('flower-background.jpg');
     background-size: cover;
     background-position: center;
     text-align: center;
@@ -11,8 +11,15 @@ body {
     margin-top: 100px;
 }
 
-h1 {
-    font-size: 32px;
+h1.fancy-text {
+    font-size: 36px;
+    font-family: 'Cursive', sans-serif;
+    color: pink;
+    text-shadow: 2px 2px 5px red;
+}
+
+h2 {
+    font-size: 28px;
     background: rgba(0, 0, 0, 0.6);
     padding: 10px;
     display: inline-block;
