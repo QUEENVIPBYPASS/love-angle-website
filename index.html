@@ -6,14 +6,13 @@
   <style>
     /* Basic reset */
     * {
-      margin: 0; 
-      padding: 0; 
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
     body {
       font-family: sans-serif;
-      background: url('https://images.unsplash.com/photo-1510265397760-8fe3bd07d843?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80') no-repeat center center fixed;
-      background-size: cover;
+      background: #000;
       color: #fff;
       text-align: center;
       padding: 20px;
@@ -48,37 +47,54 @@
       font-size: 0.9rem;
       opacity: 0.7;
     }
+    button {
+      background-color: #ff9f9f;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+    button:hover {
+      background-color: #ff7f7f;
+    }
   </style>
 </head>
 <body onload="checkPassword()">
 
-<div class="container">
-  <h1>I LOVE YOU MERI JAAN DEEPU</h1>
-  <!-- Aap apni image ka URL yahaan daal sakte hain -->
-  <img src="https://i.postimg.cc/52x6tYXt/IMG20250222201006.jpg" alt="My Image" />
+  <div class="container">
+    <h1>I LOVE YOU MERI JAAN DEEPU</h1>
 
-  <p>Meri contact details: <span class="contact">8003553818</span></p>
+    <!-- Apni image ka direct URL yahan paste karein -->
+    <img src="https://i.postimg.cc/52x6tYXt/IMG20250222201006.jpg" alt="Meri Image" />
 
-  <p class="song-info">Background Music is playing...</p>
-</div>
+    <p>Mera contact number: <span class="contact">8003553818</span></p>
 
-<!-- Romantic Song Autoplay (Loop) -->
-<audio id="loveSong" src="https://music.youtube.com/watch?v=6J9yrIKLss8&si=6DlDKFH9edkwOsFz" autoplay loop>
-  <!-- Agar browser support na kare to fallback text -->
-  Your browser does not support the audio element.
-</audio>
+    <p class="song-info">Romantic song play karne ke liye button dabayein.</p>
+    <!-- Play Song Button -->
+    <button id="playButton" onclick="playSong()">Play Song</button>
+  </div>
 
-<script>
-  // Simple password protection (not super secure, but enough for a casual private page)
-  function checkPassword() {
-    var pass = prompt("Enter Secret Code to Access:");
-    // Aap yahan apna desired password set kar sakte hain
-    if (pass !== "DINUDEEPU") {
-      alert("Wrong password! Redirecting...");
-      window.location.href = "https://www.google.com";
+  <!-- Background Song (Autoplay removed, will play on button click) -->
+  <audio id="loveSong" src="https://www.bensound.com/bensound-music/bensound-love.mp3" loop></audio>
+
+  <script>
+    // Basic password protection
+    function checkPassword() {
+      var pass = prompt("Enter Secret Code to Access:");
+      if (pass !== "DINUDEEPU") {
+        alert("Wrong password! Redirecting...");
+        window.location.href = "https://www.google.com";
+      }
     }
-  }
-</script>
+
+    // Function to play the song when button is clicked
+    function playSong() {
+      var song = document.getElementById("loveSong");
+      song.play();
+    }
+  </script>
 
 </body>
 </html>
